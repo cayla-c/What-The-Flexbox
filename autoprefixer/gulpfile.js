@@ -1,8 +1,11 @@
-var gulp = require('gulp');
-var autoprefixer = require('gulp-autoprefixer');
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
 
+function onError(err) {
+  console.log(err);
+}
 
-gulp.task('styles',function() {
+gulp.task('styles', async function() {
   gulp.src('css/styles.css')
     .pipe(autoprefixer())
     .pipe(gulp.dest('build'))
